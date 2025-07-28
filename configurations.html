@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefit Configurations - Maven Wallet Benefits Design Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/configurations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Maven Wallet Benefits Design Tool</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="btn-secondary">Home</a>
+                <a href="templates.html" class="btn-primary">New Configuration</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="configurations-section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Benefit Configurations</h1>
+                    <p>Manage and view all your saved benefit configurations</p>
+                </div>
+
+                <div class="configurations-toolbar">
+                    <div class="search-filters">
+                        <input type="text" id="search-input" placeholder="Search by client name..." class="search-input">
+                        <select id="status-filter" class="filter-select">
+                            <option value="">All Configurations</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="toolbar-actions">
+                        <button id="refresh-btn" class="btn-outline" title="Refresh">
+                            🔄 Refresh
+                        </button>
+                        <a href="templates.html" class="btn-primary">
+                            + New Configuration
+                        </a>
+                    </div>
+                </div>
+
+                <div id="configurations-container" class="configurations-container">
+                    <div id="loading-state" class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Loading configurations...</p>
+                    </div>
+                    
+                    <div id="empty-state" class="empty-state" style="display: none;">
+                        <div class="empty-state-content">
+                            <h3>No configurations found</h3>
+                            <p>Start by creating your first benefit configuration</p>
+                            <a href="templates.html" class="btn-primary">Create Configuration</a>
+                        </div>
+                    </div>
+                    
+                    <div id="configurations-grid" class="configurations-grid" style="display: none;">
+                        <!-- Configuration cards will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Configuration Details Modal -->
+    <div id="config-details-modal" class="modal" style="display: none;">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3 id="modal-client-name">Configuration Details</h3>
+                <button type="button" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="config-details-content">
+                    <!-- Configuration details will be inserted here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="close-details">Close</button>
+                <button type="button" class="btn-primary" id="edit-config">Edit Configuration</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-confirmation-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Delete</h3>
+                <button type="button" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this configuration? This action cannot be undone.</p>
+                <p><strong id="delete-client-name"></strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancel-delete">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-delete">Delete Configuration</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Maven Wallet Benefits Design Tool. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/configurations.js"></script>
+</body>
+</html>

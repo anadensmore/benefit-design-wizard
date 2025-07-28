@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Summary - Maven Wallet Benefits Design Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/view-configuration-clean.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Maven Wallet Benefits Design Tool</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="btn-secondary">Home</a>
+                <a href="configurations.html" class="btn-secondary">← Back to Configurations</a>
+                <button id="print-btn" class="btn-outline">🖨️ Print</button>
+                <button id="edit-config-btn" class="btn-primary" style="display: none;">Edit Configuration</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="view-config-section">
+            <div class="container">
+                <div id="loading-state" class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading configuration...</p>
+                </div>
+
+                <div id="config-content" class="config-content" style="display: none;">
+                    <div class="config-header">
+                        <h1 id="config-title">Configuration Summary</h1>
+                        <p id="config-subtitle">Benefit configuration details</p>
+                    </div>
+
+                    <div id="config-summary" class="config-summary">
+                        <!-- Summary content will be dynamically generated here -->
+                    </div>
+                </div>
+
+                <div id="error-state" class="error-state" style="display: none;">
+                    <div class="error-content">
+                        <h3>Configuration Not Found</h3>
+                        <p>The requested configuration could not be loaded.</p>
+                        <a href="configurations.html" class="btn-primary">Back to Configurations</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Maven Wallet Benefits Design Tool. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/view-configuration-clean.js"></script>
+</body>
+</html>
