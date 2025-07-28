@@ -1,24 +1,19 @@
 {
-  "functions": {
-    "api/health.js": {
-      "runtime": "@vercel/node"
-    },
-    "api/configurations.js": {
-      "runtime": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
     }
-  },
-  "rewrites": [
+  ],
+  "routes": [
     {
-      "source": "/api/health",
-      "destination": "/api/health"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
-      "source": "/api/configurations/:path*",
-      "destination": "/api/configurations"
-    },
-    {
-      "source": "/api/configurations",
-      "destination": "/api/configurations"
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
